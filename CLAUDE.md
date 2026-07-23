@@ -2,19 +2,50 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Status
+## Overview
 
-This repository (`new-agent`) is currently empty — no source code, build tooling, or dependencies have been committed yet. Update this file as the project takes shape.
+Marketing website for **Gold Light Digital** — an AI Visibility & Trust consultancy
+(founder: Kara Reagan) serving regulated industries (HealthTech, MedTech & Pharma,
+Medical Aesthetics, Nutraceuticals, FinTech). The site explains the "AI visibility
+gap," the firm's services (AI Visibility Snapshot, AI Brand Visibility Audit, and
+ongoing monitoring), the process, and how to get in touch.
 
-When adding to this file later, document:
+It is a **static, dependency-free website** — plain HTML, CSS, and vanilla JS. No
+build step, no framework, no package manager.
 
-- **Overview** — what the project does and its high-level architecture.
-- **Setup** — how to install dependencies and configure a local environment.
-- **Common commands** — build, run, test, lint, and format commands (with the exact invocations).
-- **Architecture** — key modules, directories, and how they fit together; anything a newcomer wouldn't infer from a single file.
-- **Conventions** — coding style, naming, commit message format, and any project-specific patterns to follow.
+## Setup & running
 
-## Working in This Repository
+No install step. Open `index.html` directly, or serve locally:
 
-- Keep this file up to date as tooling and structure are introduced, so it always reflects how to build, test, and run the project.
+```bash
+python3 -m http.server 8000
+# then visit http://localhost:8000
+```
+
+## Structure
+
+- `index.html` — single-page site (hero, problem, services, process, industries, about, contact, footer).
+- `css/styles.css` — all styles; design tokens live in `:root` at the top.
+- `js/main.js` — sticky header, mobile nav toggle, and scroll-reveal (all progressive enhancement).
+- `assets/favicon.svg` — brand favicon.
+
+## Brand system
+
+Keep these consistent with Gold Light Digital's existing assets:
+
+- **Colors:** base `#12151d`, warm dark `#1c1a12`, gold `#e8c15c`, off-white `#f5f3ee`, muted `#a9adb8`, faint `#8b8f99`.
+- **Type:** Fraunces (serif display / headlines), Inter (sans body). The brand's
+  graphic template uses Georgia/Arial; Fraunces + Inter are the web-font equivalents.
+- **Logo mark:** gold dot + uppercase, letter-spaced "GOLD LIGHT DIGITAL" wordmark.
+
+## Conventions
+
+- Vanilla everything — no dependencies. Prefer adding a CSS custom property over hard-coding a color.
+- Copy is compliance-aware, precise, and never alarmist (matches Kara's established voice).
+- Every interactive feature degrades gracefully and respects `prefers-reduced-motion`.
+- Keep the site accessible: semantic landmarks, skip link, visible focus states, ARIA on the nav toggle.
+
+## Working in this repository
+
+- Keep this file up to date as tooling and structure are introduced.
 - Prefer documenting non-obvious decisions here rather than leaving them implicit in the code.
