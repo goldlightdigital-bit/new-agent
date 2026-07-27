@@ -882,6 +882,35 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
 }
 .legal-back:hover { text-decoration: underline; }
 
+/* ---------- Cookie consent banner ---------- */
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  z-index: 150;
+  width: min(700px, calc(100% - 2rem));
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 1rem 1.3rem;
+  background: rgba(23, 26, 35, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--gold-line);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px -22px rgba(0, 0, 0, 0.75);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-text { color: var(--muted); font-size: 0.9rem; margin: 0; }
+.cookie-text a { color: var(--gold); text-decoration: underline; }
+.cookie-actions { display: flex; gap: 0.6rem; flex-shrink: 0; }
+.cookie-btn { padding: 0.58rem 1.1rem; font-size: 0.86rem; }
+@media (max-width: 560px) {
+  .cookie-banner { flex-direction: column; align-items: stretch; gap: 0.9rem; }
+  .cookie-actions { justify-content: flex-end; }
+}
+
 /* ---------- Reveal animation ---------- */
 .reveal {
   opacity: 0;
@@ -1412,9 +1441,22 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
       <nav class="footer-legal" aria-label="Legal">
         <a href="privacy-standalone.html">Privacy Policy</a>
         <a href="terms-standalone.html">Terms &amp; Conditions</a>
+        <a href="accessibility-standalone.html">Accessibility</a>
       </nav>
     </div>
   </footer>
+
+  <!-- ============ COOKIE CONSENT ============ -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie notice" hidden>
+    <p class="cookie-text">
+      We use cookies to operate this site and understand how it's used. See our
+      <a href="privacy-standalone.html">Privacy Policy</a>.
+    </p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost cookie-btn" id="cookie-decline" type="button">Decline</button>
+      <button class="btn btn-primary cookie-btn" id="cookie-accept" type="button">Accept</button>
+    </div>
+  </div>
 
   <script>
 /* Gold Light Digital — interactions */
@@ -1452,6 +1494,23 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") setOpen(false);
     });
+  }
+
+  /* Cookie consent — stores the choice so tools added later can honor it */
+  var banner = document.getElementById("cookie-banner");
+  if (banner) {
+    var KEY = "gld-cookie-consent";
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (!stored) banner.hidden = false;
+    var choose = function (value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      banner.hidden = true;
+    };
+    var accept = document.getElementById("cookie-accept");
+    var decline = document.getElementById("cookie-decline");
+    if (accept) accept.addEventListener("click", function () { choose("accepted"); });
+    if (decline) decline.addEventListener("click", function () { choose("declined"); });
   }
 
   /* Scroll reveal */

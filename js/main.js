@@ -35,6 +35,23 @@
     });
   }
 
+  /* Cookie consent — stores the choice so tools added later can honor it */
+  var banner = document.getElementById("cookie-banner");
+  if (banner) {
+    var KEY = "gld-cookie-consent";
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (!stored) banner.hidden = false;
+    var choose = function (value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      banner.hidden = true;
+    };
+    var accept = document.getElementById("cookie-accept");
+    var decline = document.getElementById("cookie-decline");
+    if (accept) accept.addEventListener("click", function () { choose("accepted"); });
+    if (decline) decline.addEventListener("click", function () { choose("declined"); });
+  }
+
   /* Scroll reveal */
   var revealEls = document.querySelectorAll(".reveal");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

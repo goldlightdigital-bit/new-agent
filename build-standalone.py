@@ -16,6 +16,7 @@ PAGES = {
     "index.html": "gold-light-digital-standalone.html",
     "privacy.html": "privacy-standalone.html",
     "terms.html": "terms-standalone.html",
+    "accessibility.html": "accessibility-standalone.html",
 }
 
 root = pathlib.Path(__file__).parent
