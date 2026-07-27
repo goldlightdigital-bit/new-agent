@@ -24,10 +24,17 @@ python3 -m http.server 8000
 
 ## Structure
 
-- `index.html` — single-page site (hero, problem, services, process, industries, about, contact, footer).
+- `index.html` — single-page site (hero, how-we-work, services, compliance, pricing, industries, about, contact, footer).
+- `privacy.html` / `terms.html` — Privacy Policy and Terms & Conditions pages (linked from the footer).
 - `css/styles.css` — all styles; design tokens live in `:root` at the top.
 - `js/main.js` — sticky header, mobile nav toggle, and scroll-reveal (all progressive enhancement).
 - `assets/favicon.svg` — brand favicon.
+- `build-standalone.py` — regenerates the paste-ready single-file builds. Run after editing any HTML/CSS/JS.
+- `*-standalone.html` — generated, self-contained single-file versions of each page (CSS/JS/favicon inlined) for website builders that only accept a single code block. Do not hand-edit; run `python3 build-standalone.py`.
+
+## Legal pages
+
+`privacy.html` and `terms.html` are **general-purpose templates, not legal advice** (each carries a `TEMPLATE NOTICE` comment). Before relying on them: replace the Governing Law jurisdiction placeholder in `terms.html`, confirm the copy matches actual data practices/tools, and have counsel review. Update the visible "Last updated" date when the content changes.
 
 ## Brand system
 
