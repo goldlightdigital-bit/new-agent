@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gold Light Digital — AI Visibility &amp; Trust for Regulated Brands</title>
-  <meta name="description" content="Gold Light Digital shows regulated brands exactly what ChatGPT, Perplexity, and Gemini say about them — and where it creates HIPAA, FDA, and SEC risk. AI Visibility Snapshots and Brand Visibility Audits." />
+  <title>Gold Light Digital — AI Marketing &amp; Compliance Agency for Regulated Brands</title>
+  <meta name="description" content="Gold Light Digital is an AI marketing &amp; compliance agency for regulated industries. AI agents handle the volume; a human makes every compliance-sensitive call. Visibility, voice agents, lead generation, insight, and a compliance layer that runs through it all." />
   <meta name="theme-color" content="#12151d" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gold Light Digital — AI Visibility &amp; Trust" />
-  <meta property="og:description" content="Know exactly what AI platforms say about your brand — before your customers, competitors, or regulators do." />
+  <meta property="og:title" content="Gold Light Digital — AI Marketing &amp; Compliance Agency" />
+  <meta property="og:description" content="AI agents handle the volume. A human makes every compliance-sensitive call. Built for regulated brands." />
   <meta property="og:site_name" content="Gold Light Digital" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-label%3D%22Gold%20Light%20Digital%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%2264%22%20y2%3D%2264%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2312151d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231c1a12%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22glow%22%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2226%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e8c15c%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23b8912f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url%28%23bg%29%22/%3E%0A%20%20%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%2248%22%20height%3D%2248%22%20rx%3D%2210%22%20fill%3D%22none%22%20stroke%3D%22%23e8c15c%22%20stroke-opacity%3D%220.3%22/%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2210%22%20fill%3D%22url%28%23glow%29%22/%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2216%22%20fill%3D%22none%22%20stroke%3D%22%23e8c15c%22%20stroke-opacity%3D%220.55%22%20stroke-width%3D%221.5%22/%3E%0A%3C/svg%3E%0A" />
@@ -328,6 +328,37 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   opacity: 0.7;
 }
 
+/* ---------- Platforms strip ---------- */
+.platforms {
+  background: var(--warm);
+  border-block: 1px solid var(--border);
+}
+.platforms-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 2rem;
+  padding-block: 1.25rem;
+}
+.platforms-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--gold);
+}
+.platforms ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
+}
+.platforms li {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
 /* ---------- Problem ---------- */
 .problem { background: var(--base); }
 .stat-grid {
@@ -361,8 +392,71 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   border-left: 3px solid var(--gold);
 }
 
+/* ---------- The Model ---------- */
+.model { background: linear-gradient(180deg, var(--base), var(--warm)); }
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.model-card {
+  position: relative;
+  padding: 2.1rem 1.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  overflow: hidden;
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+.model-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  opacity: 0.6;
+}
+.model-card:hover { transform: translateY(-5px); border-color: var(--gold-line); }
+.model-icon {
+  display: block;
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.model-card h3 { font-size: 1.4rem; margin-bottom: 0.6rem; }
+.model-card p { color: var(--muted); font-size: 0.97rem; }
+
+.loop {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 2rem 2.2rem;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--radius);
+  background: linear-gradient(120deg, rgba(232, 193, 92, 0.08), rgba(232, 193, 92, 0.02));
+}
+.loop-mark {
+  font-size: 2.6rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.loop h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.loop p { color: var(--muted); font-size: 0.97rem; max-width: 70ch; }
+
 /* ---------- Services ---------- */
-.services { background: linear-gradient(180deg, var(--base), var(--warm)); }
+.services { background: var(--warm); }
+.service-grid--five { align-items: stretch; }
+.service-link {
+  display: inline-block;
+  margin-top: 1.3rem;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.service-link:hover { text-decoration: underline; }
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -415,7 +509,129 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   font-weight: 700;
 }
 
-/* ---------- Process ---------- */
+/* ---------- Compliance layer ---------- */
+.compliance { background: var(--base); }
+.compliance-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.compliance-cols h3 {
+  font-size: 1.35rem;
+  margin-bottom: 1.4rem;
+}
+.severity, .lenses {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.9rem;
+}
+.severity-scale { display: flex; flex-direction: column; gap: 0.9rem; }
+.sev {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  background: rgba(245, 243, 238, 0.03);
+  border-left: 3px solid var(--sev-color, var(--faint));
+}
+.sev-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--sev-color, var(--faint));
+  flex-shrink: 0;
+  margin-top: 0.4rem;
+  box-shadow: 0 0 10px 0 var(--sev-color, transparent);
+}
+.sev strong { display: block; color: var(--white); font-size: 1rem; }
+.sev p { color: var(--muted); font-size: 0.9rem; margin-top: 0.15rem; }
+.sev-1 { --sev-color: #8b8f99; }
+.sev-2 { --sev-color: #6fa8c7; }
+.sev-3 { --sev-color: var(--gold); }
+.sev-4 { --sev-color: #d98b5f; }
+
+.lens-card {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+  transition: border-color 0.3s var(--ease);
+}
+.lens-card:hover { border-color: var(--gold-line); }
+.lens-card h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+.lens-card p { color: var(--muted); font-size: 0.92rem; }
+.lenses-note {
+  color: var(--faint);
+  font-size: 0.88rem;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Pricing ---------- */
+.pricing { background: linear-gradient(180deg, var(--base), var(--warm)); }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.price-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.2rem 2rem;
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.price-card:hover { transform: translateY(-5px); border-color: var(--gold-line); }
+.price-card.featured {
+  background: linear-gradient(165deg, #1e2130, #191b13);
+  border-color: var(--gold-line);
+  box-shadow: 0 20px 60px -30px rgba(232, 193, 92, 0.4);
+}
+.price-card h3 { font-size: 1.6rem; margin-bottom: 1rem; }
+.price-anchor {
+  font-family: var(--serif);
+  font-size: 2.3rem;
+  color: var(--white);
+  line-height: 1;
+}
+.price-anchor span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--faint);
+  margin-bottom: 0.35rem;
+}
+.price-monthly {
+  color: var(--gold);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0.5rem 0 1.4rem;
+}
+.price-card .service-list { margin-bottom: 1.8rem; }
+.price-btn { margin-top: auto; width: 100%; }
+.pricing-note {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--faint);
+  font-size: 0.88rem;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* ---------- Process (legacy, unused) ---------- */
 .process { background: var(--warm); }
 .steps {
   display: grid;
@@ -614,6 +830,8 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-card { position: static; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  .compliance-cols { grid-template-columns: 1fr; }
+  .loop { flex-direction: column; align-items: flex-start; gap: 1rem; }
 }
 
 @media (max-width: 720px) {
@@ -665,12 +883,12 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#problem">The Problem</a></li>
+          <li><a href="#model">The Model</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#process">How It Works</a></li>
-          <li><a href="#industries">Who We Serve</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#about">About</a></li>
-          <li><a class="nav-cta" href="#contact">Book an Audit</a></li>
+          <li><a class="nav-cta" href="#contact">Book a Call</a></li>
         </ul>
       </nav>
     </div>
@@ -681,23 +899,24 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
     <section class="hero">
       <div class="hero-numeral" aria-hidden="true">AI</div>
       <div class="container hero-inner">
-        <p class="eyebrow reveal">AI Visibility &amp; Trust</p>
+        <p class="eyebrow reveal">AI Marketing &amp; Compliance Agency</p>
         <h1 class="reveal">
-          Know exactly what AI says<br />
-          about your brand —<br />
-          <span class="gold">before anyone else does.</span>
+          AI agents handle<br />
+          the volume.<br />
+          <span class="gold">A human makes every call.</span>
         </h1>
         <p class="hero-sub reveal">
-          ChatGPT, Perplexity, and Gemini are already describing your company to
-          customers, investors, and regulators. Gold Light Digital shows you what
-          they're saying, where it's wrong, and how to fix it — with the
-          compliance rigor a regulated brand demands.
+          Gold Light Digital is an AI-native marketing agency built for regulated
+          industries. Autonomous agents handle monitoring, drafting, enrichment,
+          and scanning at scale — and nothing compliance-sensitive ever ships
+          without human review. Visibility, voice, leads, and insight, with a
+          compliance layer running underneath all of it.
         </p>
         <div class="hero-actions reveal">
-          <a class="btn btn-primary" href="#contact">Book an AI Visibility Audit</a>
-          <a class="btn btn-ghost" href="#services">See how it works</a>
+          <a class="btn btn-primary" href="#contact">Book a Discovery Call</a>
+          <a class="btn btn-ghost" href="#services">Explore our services</a>
         </div>
-        <ul class="hero-trust reveal" aria-label="Focus areas">
+        <ul class="hero-trust reveal" aria-label="Industries served">
           <li>HealthTech</li>
           <li>MedTech &amp; Pharma</li>
           <li>Medical Aesthetics</li>
@@ -707,24 +926,38 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
       </div>
     </section>
 
-    <!-- ============ PROBLEM / STAT BAND ============ -->
+    <!-- ============ PLATFORMS STRIP ============ -->
+    <div class="platforms" aria-label="AI platforms we monitor">
+      <div class="container platforms-inner">
+        <span class="platforms-label">Monitoring across</span>
+        <ul>
+          <li>ChatGPT</li>
+          <li>Perplexity</li>
+          <li>Gemini</li>
+          <li>Claude</li>
+          <li>Copilot</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ PROBLEM ============ -->
     <section class="problem" id="problem">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">The Visibility Gap</p>
           <h2>Your customers ask AI about you. You have no idea what it answers.</h2>
           <p class="section-lede">
-            Buyers no longer start with Google. They ask an AI assistant — and
-            take the answer at face value. When that answer is outdated, invented,
-            or attributes a competitor's strength to you, the damage is invisible
-            until it isn't.
+            Buyers no longer start with Google — they ask an AI assistant and take
+            the answer at face value. When that answer is outdated, invented, or
+            hands your strength to a competitor, the damage is invisible until it
+            isn't. In regulated categories, it's also a compliance exposure.
           </p>
         </div>
 
         <div class="stat-grid">
           <div class="stat-card reveal">
-            <span class="stat-num">3&nbsp;of&nbsp;4</span>
-            <p>buyers now use AI assistants to research vendors — often without ever visiting your website.</p>
+            <span class="stat-num">5</span>
+            <p>major AI platforms — ChatGPT, Perplexity, Gemini, Claude, and Copilot — are describing your brand right now, on their terms.</p>
           </div>
           <div class="stat-card reveal">
             <span class="stat-num">~1&nbsp;in&nbsp;3</span>
@@ -732,15 +965,60 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
           </div>
           <div class="stat-card reveal">
             <span class="stat-num">0</span>
-            <p>is how many regulated brands can currently show their board what AI says about them — until they run an audit.</p>
+            <p>departments here operate without a human review checkpoint. Every compliance-sensitive decision passes a person.</p>
           </div>
         </div>
 
         <p class="stat-footnote">
-          In regulated industries, an inaccurate AI answer isn't just a bad look.
-          It's potential HIPAA, FDA, or SEC exposure — attributed to your brand,
-          at scale, with no paper trail.
+          In regulated industries, an inaccurate AI answer isn't just a bad look —
+          it's potential HIPAA, FDA, or SEC exposure, attributed to your brand, at
+          scale, with no paper trail. We build the paper trail.
         </p>
+      </div>
+    </section>
+
+    <!-- ============ THE MODEL ============ -->
+    <section class="model" id="model">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How We're Built</p>
+          <h2>Agents for the volume. Humans for the judgment. Compliance underneath.</h2>
+          <p class="section-lede">
+            Every part of the agency follows the same three-layer shape. It's what
+            lets a lean team move at machine speed without ever putting a regulated
+            brand at risk.
+          </p>
+        </div>
+
+        <div class="model-grid">
+          <article class="model-card reveal">
+            <span class="model-icon" aria-hidden="true">◐</span>
+            <h3>Agents do the volume</h3>
+            <p>Autonomous AI agents monitor platforms, draft content, enrich prospects, and scan for issues — continuously, at a scale humans can't match.</p>
+          </article>
+          <article class="model-card reveal">
+            <span class="model-icon" aria-hidden="true">◆</span>
+            <h3>Humans do the judgment</h3>
+            <p>Every review, approval, and client-facing recommendation is made by a person. Nothing compliance-sensitive ships on autopilot.</p>
+          </article>
+          <article class="model-card reveal">
+            <span class="model-icon" aria-hidden="true">◇</span>
+            <h3>Compliance runs underneath</h3>
+            <p>A dedicated compliance check runs beneath every workflow as a constant, not an afterthought — flagging risk before it reaches your audience.</p>
+          </article>
+        </div>
+
+        <div class="loop reveal">
+          <div class="loop-mark" aria-hidden="true">↻</div>
+          <div>
+            <h3>The one touchpoint every account gets, every month</h3>
+            <p>
+              Monthly report → human review → client call. Every account, every
+              month, without exception. Automated monitoring does the watching; a
+              person does the interpreting before anything reaches you.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -749,95 +1027,202 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Services</p>
-          <h2>From a fast reality check to a defensible roadmap.</h2>
+          <h2>Five capabilities. One accountable team.</h2>
           <p class="section-lede">
-            Three ways to work together, each building on the last — start with a
-            snapshot, get the full picture, then keep it clean over time.
+            Engage one service or the full stack. Each is agent-powered,
+            human-reviewed, and wrapped in the same compliance layer.
           </p>
         </div>
 
-        <div class="service-grid">
+        <div class="service-grid service-grid--five">
           <article class="service-card reveal">
-            <p class="service-tag">Start here</p>
-            <h3>AI Visibility Snapshot</h3>
+            <p class="service-tag">01 · Visibility</p>
+            <h3>AI Visibility &amp; Reputation</h3>
             <p class="service-desc">
-              A fast, pre-engagement read of how ChatGPT, Perplexity, and Gemini
-              currently describe your company. Delivered as a concise briefing you
-              can take straight into a leadership conversation.
+              See and shape how AI platforms describe you — plus the SEO / GEO / AEO
+              work and targeted content that closes the gaps.
             </p>
             <ul class="service-list">
-              <li>Cross-platform query testing on your brand</li>
-              <li>Accuracy &amp; sentiment flags</li>
-              <li>2-page summary + executive walkthrough</li>
+              <li>Scheduled monitoring across five AI platforms</li>
+              <li>Change-detection when an answer about you shifts</li>
+              <li>Scorecard on the 4 Pillars — Accuracy, Authority, Consistency, Credibility</li>
+              <li>Schema, citation-readiness &amp; content-gap fixes</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <p class="service-tag">02 · Voice</p>
+            <h3>Voice &amp; Chatbot Agents</h3>
+            <p class="service-desc">
+              AI agents that answer calls and chats for you — with human escalation
+              and pre-approved disclosure language built in.
+            </p>
+            <ul class="service-list">
+              <li>One live agent tuned per client</li>
+              <li>Escalation rulebook for clinical or sensitive questions</li>
+              <li>Pre-approved compliance disclosures in every flow</li>
+              <li>Transcripts reviewed for drift and accuracy</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <p class="service-tag">03 · Leads</p>
+            <h3>Lead Generation</h3>
+            <p class="service-desc">
+              Personalized, researched outreach — with a human approval gate on
+              every first-touch message before it sends.
+            </p>
+            <ul class="service-list">
+              <li>Company-specific research, not mail-merge</li>
+              <li>Every first-touch email reviewed before send</li>
+              <li>Qualified replies handled personally</li>
+              <li>Deliverability managed with proper domain warming</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <p class="service-tag">04 · Insight</p>
+            <h3>Data &amp; Insight</h3>
+            <p class="service-desc">
+              One dashboard across visibility, voice, lead gen, and brand sentiment
+              — with a monthly digest a human reviews before you see it.
+            </p>
+            <ul class="service-list">
+              <li>Unified dashboard across every department</li>
+              <li>Sentiment scanning of reviews and social mentions</li>
+              <li>Automated monthly digest, human-checked</li>
+              <li>Anomalies flagged before they reach the client</li>
             </ul>
           </article>
 
           <article class="service-card featured reveal">
-            <p class="service-tag">Flagship</p>
-            <h3>AI Brand Visibility Audit</h3>
+            <p class="service-tag">Runs through everything</p>
+            <h3>Trust &amp; Compliance</h3>
             <p class="service-desc">
-              The full Tier 1 engagement. A rigorous, sourced assessment of how AI
-              platforms represent your brand — and a prioritized plan to correct
-              and strengthen it.
+              Not a bolt-on. Every agent's output passes a compliance check before
+              it reaches a human — and a defensible audit trail is built as it goes.
             </p>
             <ul class="service-list">
-              <li>Platform Audit across major AI assistants</li>
-              <li>Accuracy Assessment against your source of truth</li>
-              <li>Competitive Analysis &amp; share-of-answer</li>
-              <li>Entity / Knowledge Graph review</li>
-              <li>Prioritized remediation Roadmap</li>
-              <li>Interactive client dashboard</li>
+              <li>Four-level severity flagging on every output</li>
+              <li>Three-lens review: Accuracy · Authority · Consistency</li>
+              <li>Timestamped audit trail for every decision</li>
+              <li>Escalation to retained counsel for real determinations</li>
             </ul>
-          </article>
-
-          <article class="service-card reveal">
-            <p class="service-tag">Stay ahead</p>
-            <h3>Ongoing Visibility Monitoring</h3>
-            <p class="service-desc">
-              AI answers drift as models update. Stay ahead with recurring checks,
-              alerting on new inaccuracies, and quarterly reviews that keep your
-              compliance and marketing teams aligned.
-            </p>
-            <ul class="service-list">
-              <li>Scheduled re-audits as models change</li>
-              <li>Drift &amp; new-risk alerting</li>
-              <li>Quarterly trust &amp; visibility review</li>
-            </ul>
+            <a class="service-link" href="#compliance">See how the compliance layer works →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ PROCESS ============ -->
-    <section class="process" id="process">
+    <!-- ============ COMPLIANCE LAYER ============ -->
+    <section class="compliance" id="compliance">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">How It Works</p>
-          <h2>A clear path from unknown to defensible.</h2>
+          <p class="eyebrow">The Compliance Layer</p>
+          <h2>We don't call things "compliant." We flag them — by severity and by lens.</h2>
+          <p class="section-lede">
+            An agency shouldn't hand a regulated client a legal opinion. So we
+            don't. Everything our agents produce is scored on a consistent
+            severity scale and passed through three review lenses — and when
+            something genuinely needs a determination, we recommend counsel rather
+            than guess.
+          </p>
         </div>
 
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step-num">01</span>
-            <h3>Scope</h3>
-            <p>We define your brand entities, key claims, competitors, and the regulatory lines that matter — HIPAA, FDA, SEC, or state AI rules.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">02</span>
-            <h3>Audit</h3>
-            <p>We test how the major AI platforms answer real buyer and regulator questions about you, and document every response with sources.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">03</span>
-            <h3>Assess</h3>
-            <p>Each answer is scored for accuracy, sentiment, and risk against your own source of truth — no hand-waving, every flag traceable.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">04</span>
-            <h3>Roadmap</h3>
-            <p>You get a prioritized, plain-English plan to correct inaccuracies and strengthen how AI represents you — plus a dashboard to track it.</p>
-          </li>
-        </ol>
+        <div class="compliance-cols">
+          <div class="severity reveal">
+            <h3>Four-level severity scale</h3>
+            <ul class="severity-scale">
+              <li class="sev sev-1"><span class="sev-dot"></span><div><strong>Informational</strong><p>Noted for context. No action required.</p></div></li>
+              <li class="sev sev-2"><span class="sev-dot"></span><div><strong>Monitor</strong><p>Worth watching. Tracked run over run.</p></div></li>
+              <li class="sev sev-3"><span class="sev-dot"></span><div><strong>Action Needed</strong><p>A fix is recommended, with a clear next step.</p></div></li>
+              <li class="sev sev-4"><span class="sev-dot"></span><div><strong>Urgent / Escalate</strong><p>High-risk. Carries an explicit recommendation to involve legal counsel.</p></div></li>
+            </ul>
+          </div>
+
+          <div class="lenses reveal">
+            <h3>Three review lenses</h3>
+            <div class="lens-card">
+              <h4>Accuracy</h4>
+              <p>Does the claim match your verified source of truth?</p>
+            </div>
+            <div class="lens-card">
+              <h4>Authority</h4>
+              <p>Is your own content the cited source — or is a third party speaking for you?</p>
+            </div>
+            <div class="lens-card">
+              <h4>Consistency</h4>
+              <p>Does the message hold together across platforms, pages, and time?</p>
+            </div>
+            <p class="lenses-note">
+              Every flag and decision is timestamped, forming a defensible record
+              your compliance team can stand behind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Engagements</p>
+          <h2>Three tiers, each a clear step up in outcome.</h2>
+          <p class="section-lede">
+            Start with visibility and grow into the full stack. Every tier includes
+            the compliance layer — it's the anchor, not an upsell.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <p class="service-tag">Start here</p>
+            <h3>Foundation</h3>
+            <p class="price-anchor"><span>Setup from</span> $5K</p>
+            <p class="price-monthly">from $1,800 / month</p>
+            <ul class="service-list">
+              <li>AI Visibility Audit</li>
+              <li>GEO / AEO Readiness Check</li>
+              <li>4 Pillars scorecard &amp; baseline</li>
+              <li>Monthly report, review &amp; call</li>
+            </ul>
+            <a class="btn btn-ghost price-btn" href="#contact">Get started</a>
+          </article>
+
+          <article class="price-card featured reveal">
+            <p class="service-tag">Most popular</p>
+            <h3>Growth</h3>
+            <p class="price-anchor"><span>Setup from</span> $12K</p>
+            <p class="price-monthly">from $4,000 / month</p>
+            <ul class="service-list">
+              <li>Everything in Foundation</li>
+              <li>GEO-driven content fixes</li>
+              <li>Lead Generation with human approval gate</li>
+              <li>Unified insight dashboard</li>
+            </ul>
+            <a class="btn btn-primary price-btn" href="#contact">Book a call</a>
+          </article>
+
+          <article class="price-card reveal">
+            <p class="service-tag">Everything</p>
+            <h3>Full-Stack</h3>
+            <p class="price-anchor"><span>Setup from</span> $20K</p>
+            <p class="price-monthly">from $6,500 / month</p>
+            <ul class="service-list">
+              <li>Everything in Growth</li>
+              <li>Voice / Chatbot Agent, per client</li>
+              <li>Ongoing compliance monitoring</li>
+              <li>Priority escalation &amp; review cadence</li>
+            </ul>
+            <a class="btn btn-ghost price-btn" href="#contact">Talk to us</a>
+          </article>
+        </div>
+
+        <p class="pricing-note">
+          Platform usage (telephony minutes, sending tools, model usage) is billed
+          separately at cost. Annual engagements available at a modest discount.
+        </p>
       </div>
     </section>
 
@@ -856,7 +1241,7 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
         <div class="industry-grid">
           <div class="industry-card reveal">
             <h3>HealthTech &amp; Telehealth</h3>
-            <p>Patient-facing accuracy and HIPAA-aware messaging across AI assistants.</p>
+            <p>Patient-facing accuracy and HIPAA-aware messaging across AI assistants and agents.</p>
           </div>
           <div class="industry-card reveal">
             <h3>MedTech &amp; Pharma</h3>
@@ -890,28 +1275,29 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
           <h2>Compliance-aware. Never alarmist.</h2>
           <p>
             Gold Light Digital was founded by <strong>Kara Reagan</strong> to give
-            regulated brands something they've never had: a clear, sourced view of
-            how AI platforms represent them — and a plan they can defend to legal,
-            compliance, and the board.
+            regulated brands an AI-native marketing partner they can actually trust
+            — one that moves at the speed AI makes possible, without ever
+            outsourcing judgment to a machine.
           </p>
           <p>
-            Every finding is traceable to a source. Every risk is stated plainly,
-            not dramatized. The goal isn't fear — it's control over a channel that's
-            already shaping how customers, investors, and regulators see you.
+            Agents handle the volume so the work scales. A human owns every
+            compliance-sensitive decision so nothing slips. And a defensible audit
+            trail means every recommendation can be traced, sourced, and defended
+            to legal, compliance, and the board.
           </p>
           <blockquote>
-            "Most companies have no idea what AI platforms are currently saying
-            about them. My job is to show them exactly that — and what to do next."
+            "The agents make us fast. The human makes us safe. In regulated
+            industries, you don't get to have one without the other."
             <cite>— Kara Reagan, Founder</cite>
           </blockquote>
         </div>
         <aside class="about-card" aria-label="Principles">
           <h3>How we work</h3>
           <ul>
-            <li><span>◆</span> Every claim survives a skeptical compliance officer clicking through.</li>
+            <li><span>◆</span> No department operates without a human review checkpoint.</li>
             <li><span>◆</span> Precise findings over punchy ones — credibility first.</li>
             <li><span>◆</span> Risk stated plainly, matched to HIPAA / FDA / SEC realities.</li>
-            <li><span>◆</span> Deliverables your board and your CMO can both read.</li>
+            <li><span>◆</span> We audit and advise; real legal determinations go to counsel.</li>
           </ul>
         </aside>
       </div>
@@ -922,15 +1308,15 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
       <div class="container contact-inner">
         <div class="contact-numeral" aria-hidden="true">✦</div>
         <p class="eyebrow">Get Started</p>
-        <h2>See what AI says about your brand.</h2>
+        <h2>Let's see what AI says about your brand.</h2>
         <p class="contact-lede">
-          Start with a snapshot or go straight to a full audit. Either way, you'll
-          walk away knowing exactly how AI platforms represent you today — and where
-          it puts you at risk.
+          Book a discovery call and we'll start with a look at how the major AI
+          platforms represent you today — and where it puts you at risk. From there,
+          Foundation, Growth, or Full-Stack, whatever fits.
         </p>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:goldlightdigital@gmail.com?subject=AI%20Visibility%20Audit%20Inquiry">Email Kara</a>
-          <a class="btn btn-ghost" href="mailto:goldlightdigital@gmail.com?subject=Book%20an%20AI%20Visibility%20Snapshot">Request a Snapshot</a>
+          <a class="btn btn-primary" href="mailto:goldlightdigital@gmail.com?subject=Discovery%20Call%20—%20Gold%20Light%20Digital">Book a Discovery Call</a>
+          <a class="btn btn-ghost" href="mailto:goldlightdigital@gmail.com?subject=Question%20for%20Gold%20Light%20Digital">Ask a Question</a>
         </div>
         <p class="contact-note">Typically responds within one business day.</p>
       </div>
@@ -943,19 +1329,19 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
       <div class="footer-brand">
         <span class="brand-dot" aria-hidden="true"></span>
         <span class="brand-name">Gold Light Digital</span>
-        <p>AI Visibility &amp; Trust for regulated brands.</p>
+        <p>AI Marketing &amp; Compliance Agency for regulated brands.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="#problem">The Problem</a>
+        <a href="#model">The Model</a>
         <a href="#services">Services</a>
-        <a href="#process">How It Works</a>
-        <a href="#industries">Who We Serve</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#pricing">Pricing</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="footer-meta">
         <a href="mailto:goldlightdigital@gmail.com">goldlightdigital@gmail.com</a>
-        <p class="footer-tag">AI Visibility Audits · HIPAA / FDA / SEC risk</p>
+        <p class="footer-tag">AI Visibility · Voice · Leads · Insight · Compliance</p>
       </div>
     </div>
     <div class="container footer-bottom">
