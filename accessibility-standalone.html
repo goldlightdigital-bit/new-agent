@@ -964,6 +964,177 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   .hero-actions .btn, .contact-actions .btn { width: 100%; }
 }
 
+/* ============================================================
+   Consulting site components (the current index.html rebuild)
+   ============================================================ */
+
+/* ---------- Hero split (copy + photo) ---------- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+  position: relative;
+}
+.hero-grid .hero-copy { max-width: 620px; }
+.hero-checked {
+  margin-top: 2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+.hero-checked span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.hero-photo { position: relative; }
+.hero-frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 70px -34px rgba(0, 0, 0, 0.7);
+}
+.hero-ph-mark { font-size: 2rem; color: var(--gold); opacity: 0.75; }
+.hero-ph-text { font-family: var(--serif); font-size: 1.15rem; color: var(--muted); }
+.hero-ph-sub { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ---------- Offer ladder extras ---------- */
+.price-line {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  color: var(--gold);
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+}
+.price-line span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  margin-top: 0.25rem;
+}
+.price-meta {
+  font-size: 0.85rem;
+  color: var(--faint);
+  margin-bottom: 1.3rem;
+}
+.service-card .price-meta:last-of-type { margin-top: 0.4rem; margin-bottom: 1.3rem; }
+.service-btn { width: 100%; margin-top: 0.4rem; }
+.subtiers { display: flex; flex-direction: column; gap: 0.75rem; margin: 0.4rem 0 1.2rem; }
+.subtier {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  transition: border-color 0.3s var(--ease);
+}
+.subtier:hover { border-color: var(--gold-line); }
+.subtier h4 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+.subtier p { color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- 4 Pillars ---------- */
+.pillars { background: var(--base); }
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.3rem;
+}
+.pillar-grid .lens-card { margin: 0; }
+
+/* ---------- Stat unit ---------- */
+.stat-unit { font-size: 0.5em; color: var(--muted); }
+
+/* ---------- Case study ---------- */
+.results { background: linear-gradient(180deg, var(--warm), var(--base)); }
+.case-wrap {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(1.8rem, 4vw, 3rem);
+  align-items: center;
+  background: linear-gradient(165deg, #1e2130, #191b13);
+  border: 1px solid var(--gold-line);
+  border-radius: var(--radius);
+  padding: clamp(1.8rem, 4vw, 3rem);
+  box-shadow: 0 24px 70px -34px rgba(232, 193, 92, 0.4);
+}
+.case-score { text-align: center; border-right: 1px solid var(--border); padding-right: 1.5rem; }
+.case-num { font-family: var(--serif); font-size: clamp(3.5rem, 9vw, 5.5rem); color: var(--gold); line-height: 1; display: block; }
+.case-unit { font-size: 0.4em; color: var(--muted); }
+.case-label { color: var(--muted); font-size: 0.92rem; margin-top: 0.6rem; }
+.case-body p { color: var(--muted); margin-bottom: 1.1rem; }
+.case-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+.case-flow li {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-line);
+  border-radius: 50px;
+  padding: 0.4rem 0.9rem;
+}
+.case-note { font-size: 0.82rem; color: var(--faint); font-style: italic; }
+
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; max-width: 340px; }
+  .case-wrap { grid-template-columns: 1fr; }
+  .case-score { border-right: 0; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 1.3rem; }
+}
+
+/* ---------- Bio photo (v2 About) ---------- */
+.about-photo {
+  float: left;
+  width: min(230px, 42%);
+  margin: 0.3rem 1.7rem 1rem 0;
+}
+.about-frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  object-fit: cover;
+  object-position: center top;
+}
+.about-frame.ph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-align: center;
+  color: var(--faint);
+  border: 1px dashed var(--gold-line);
+  background:
+    repeating-linear-gradient(45deg, rgba(232,193,92,0.035) 0 12px, transparent 12px 24px),
+    linear-gradient(160deg, var(--panel), var(--panel-2));
+}
+@media (max-width: 560px) {
+  .about-photo { float: none; width: 100%; max-width: 280px; margin: 0 0 1.5rem; }
+}
+
   </style>
 </head>
 <body>
@@ -982,10 +1153,9 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="gold-light-digital-standalone.html#model">How We Work</a></li>
           <li><a href="gold-light-digital-standalone.html#services">Services</a></li>
-          <li><a href="gold-light-digital-standalone.html#compliance">Compliance</a></li>
-          <li><a href="gold-light-digital-standalone.html#pricing">Pricing</a></li>
+          <li><a href="gold-light-digital-standalone.html#how">How It Works</a></li>
+          <li><a href="gold-light-digital-standalone.html#results">Results</a></li>
           <li><a href="gold-light-digital-standalone.html#about">About</a></li>
           <li><a class="nav-cta" href="https://calendly.com/goldlightdigital/30min" target="_blank" rel="noopener">Book a Call</a></li>
         </ul>
@@ -1064,19 +1234,18 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
       <div class="footer-brand">
         <span class="brand-dot" aria-hidden="true"></span>
         <span class="brand-name">Gold Light Digital</span>
-        <p>AI Marketing &amp; Compliance Agency for regulated brands.</p>
+        <p>AI Visibility &amp; Trust for medical aesthetics &amp; dermatology brands.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="gold-light-digital-standalone.html#model">How We Work</a>
         <a href="gold-light-digital-standalone.html#services">Services</a>
-        <a href="gold-light-digital-standalone.html#compliance">Compliance</a>
-        <a href="gold-light-digital-standalone.html#pricing">Pricing</a>
+        <a href="gold-light-digital-standalone.html#how">How It Works</a>
+        <a href="gold-light-digital-standalone.html#results">Results</a>
         <a href="gold-light-digital-standalone.html#about">About</a>
         <a href="gold-light-digital-standalone.html#contact">Contact</a>
       </nav>
       <div class="footer-meta">
         <a href="mailto:goldlightdigital@gmail.com">goldlightdigital@gmail.com</a>
-        <p class="footer-tag">AI Visibility · Voice · Leads · Insight · Compliance</p>
+        <p class="footer-tag">AI Visibility · Accuracy Audits · Claims-Accuracy Flags</p>
       </div>
     </div>
     <div class="container footer-bottom">
