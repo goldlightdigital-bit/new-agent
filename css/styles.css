@@ -1094,10 +1094,10 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius);
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center top;
 }
 .about-frame.ph {
   display: flex;
