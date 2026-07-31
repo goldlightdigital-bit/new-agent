@@ -56,10 +56,8 @@ for src, out in PAGES.items():
 
     html = re.sub(r'(src)="(assets/[^"]+\.(?:png|jpe?g|webp|gif))"', _embed, html)
 
-    # keep cross-page links pointing at the standalone siblings
-    for page_src, page_out in PAGES.items():
-        html = html.replace(f'"{page_src}', f'"{page_out}')
-
+    # Cross-page links already point at absolute production URLs in the source,
+    # so no rewrite is needed here.
     (root / out).write_text(html)
     assert "css/styles.css" not in html and "js/main.js" not in html
     assert 'src="assets/' not in html, "unembedded image reference remains"
