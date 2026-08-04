@@ -138,41 +138,12 @@
 .glr-watch svg{width:15px;height:15px;fill:currentColor;}
 .glr-watch:hover{background:var(--glr-gold);color:var(--glr-ink);transform:translateY(-1px);}
 
-/* ---------------- email capture strip ---------------- */
-.glr-cta{
-  margin-top:clamp(2.25rem,5vw,3.5rem);
-  background:var(--glr-teal);
-  border-radius:var(--glr-radius);
-  padding:clamp(1.75rem,4vw,2.75rem);
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
-  gap:1.5rem;
-}
-.glr-cta-copy{max-width:34ch;}
-.glr-cta-title{font-weight:700;font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--glr-cream);line-height:1.25;}
-.glr-cta-sub{color:rgba(245,240,230,.8);font-size:.92rem;margin-top:.35rem;}
-.glr-form{display:flex;flex-wrap:wrap;gap:.6rem;flex:1;min-width:260px;justify-content:flex-end;}
-.glr-input{
-  flex:1;min-width:200px;
-  background:var(--glr-cream);color:var(--glr-ink);
-  border:1px solid transparent;border-radius:50px;
-  padding:.8rem 1.15rem;
-}
-.glr-input::placeholder{color:#8a8f8d;}
-.glr-submit{
-  font-weight:500;color:var(--glr-ink);background:var(--glr-gold);
-  border:0;border-radius:50px;padding:.8rem 1.5rem;cursor:pointer;
-  transition:filter .25s var(--glr-ease),transform .25s var(--glr-ease);
-}
-.glr-submit:hover{filter:brightness(1.06);transform:translateY(-1px);}
-.glr-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
-
 /* ---------------- footer note ---------------- */
 .glr-foot{text-align:center;color:var(--glr-muted);font-size:.82rem;margin-top:clamp(1.75rem,4vw,2.5rem);}
 
 /* ---- theme-proofing: survive aggressive Squarespace global CSS (incl. !important) ---- */
 .glr-replays,.glr-replays h1,.glr-replays h2,.glr-replays h3,
-.glr-replays p,.glr-replays a,.glr-replays span,.glr-replays label,
-.glr-replays button,.glr-replays input{
+.glr-replays p,.glr-replays a,.glr-replays span{
   font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif !important;
 }
 .glr-replays a{text-decoration:none !important;}
@@ -181,11 +152,8 @@
 .glr-sub,.glr-desc,.glr-date,.glr-foot{color:var(--glr-muted) !important;}
 .glr-tag{color:var(--glr-teal) !important;}
 .glr-title{color:var(--glr-ink) !important;}
-.glr-cta-title{color:var(--glr-cream) !important;}
-.glr-cta-sub{color:rgba(245,240,230,.8) !important;}
 .glr-watch{color:var(--glr-cream) !important;}
 .glr-watch:hover{color:var(--glr-ink) !important;}
-.glr-submit,.glr-input{color:var(--glr-ink) !important;}
 
 @media(prefers-reduced-motion:reduce){
   .glr-replays *{transition:none !important;}
@@ -238,31 +206,8 @@
 
     </div><!-- /.glr-grid -->
 
-    <!-- ============ 3. EMAIL CAPTURE STRIP ============ -->
-    <!--
-      This form is a VISUAL placeholder only — it can't process submissions
-      on its own. Before it collects anything, do ONE of these:
-        (a) BEST in Go High Level: delete this strip and drop a native GHL
-            *Form* element here, connected to a Workflow that emails the
-            Compliance Risk Dashboard (keeps leads in your CRM), OR
-        (b) Point the form's action/endpoint at your email tool
-            (GHL form endpoint, Mailchimp, ConvertKit, etc.) and set the
-            field "name" your provider expects.
-    -->
-    <section class="glr-cta" aria-labelledby="glr-cta-title">
-      <div class="glr-cta-copy">
-        <h2 class="glr-cta-title" id="glr-cta-title">Want the free Compliance Risk Dashboard tool?</h2>
-        <p class="glr-cta-sub">Get it in your inbox, plus new replays as they're posted.</p>
-      </div>
-      <!-- REPLACE WITH FORM ENDPOINT (e.g. Squarespace native form, Mailchimp, ConvertKit) -->
-      <form class="glr-form" action="#" method="post">
-        <label class="glr-visually-hidden" for="glr-email">Email address</label>
-        <input class="glr-input" id="glr-email" type="email" name="email" placeholder="you@company.com" required>
-        <button class="glr-submit" type="submit">Send it to me</button>
-      </form>
-    </section>
-
-    <!-- ============ 4. FOOTER NOTE ============ -->
+    <!-- ============ 3. FOOTER NOTE ============ -->
+    <!-- Add a native Go High Level Form element below this block for email capture. -->
     <p class="glr-foot">&copy; Gold Light Digital — Recordings available for a limited time.</p>
 
   </div><!-- /.glr-inner -->
