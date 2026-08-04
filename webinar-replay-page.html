@@ -1,0 +1,296 @@
+<!-- ============================================================
+     GOLD LIGHT DIGITAL — WEBINAR REPLAY PAGE
+     Paste this ENTIRE block into a Squarespace Code Block.
+
+     • All CSS is inline in the <style> tag below and scoped under
+       .glr-replays (every class is prefixed "glr-"), so it will not
+       collide with your Squarespace theme's global styles.
+     • No <script> — fully pure HTML + CSS.
+     • Search this file for the word  REPLACE  to find every spot you
+       need to edit (video URLs, thumbnail images, form endpoint).
+     ============================================================ -->
+<style>
+/* @import MUST stay as the first line inside <style> */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* ---- scope + design tokens (all live on the wrapper, so nothing leaks) ---- */
+.glr-replays{
+  --glr-teal:#16524F;
+  --glr-teal-dark:#0F3B39;
+  --glr-gold:#D4AF37;
+  --glr-cream:#F5F0E6;
+  --glr-ink:#141414;
+  --glr-muted:#585D5B;
+  --glr-card:#FFFFFF;
+  --glr-line:rgba(20,20,20,.10);
+  --glr-radius:16px;
+  --glr-ease:cubic-bezier(.22,1,.36,1);
+
+  font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  color:var(--glr-ink);
+  background:var(--glr-cream);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  padding:clamp(2.5rem,6vw,4.75rem) clamp(1.1rem,5vw,3rem);
+}
+/* defensive resets, scoped to this block only */
+.glr-replays *,.glr-replays *::before,.glr-replays *::after{box-sizing:border-box;}
+.glr-replays h1,.glr-replays h2,.glr-replays h3,.glr-replays p,.glr-replays ul{margin:0;padding:0;}
+.glr-replays a{color:inherit;text-decoration:none;}
+.glr-replays img{max-width:100%;display:block;}
+.glr-replays button,.glr-replays input{font-family:inherit;font-size:inherit;}
+.glr-replays :focus-visible{outline:3px solid var(--glr-gold);outline-offset:3px;border-radius:6px;}
+
+.glr-inner{max-width:1140px;margin:0 auto;}
+
+/* ---------------- header ---------------- */
+.glr-head{text-align:center;max-width:760px;margin:0 auto clamp(2.25rem,5vw,3.25rem);}
+.glr-eyebrow{
+  font-weight:500;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--glr-gold);margin-bottom:1rem;
+}
+.glr-h1{
+  font-weight:700;color:var(--glr-teal);letter-spacing:-.01em;line-height:1.15;
+  font-size:clamp(1.9rem,4.6vw,3rem);margin-bottom:1rem;
+}
+.glr-sub{color:var(--glr-muted);font-size:clamp(1rem,2vw,1.15rem);max-width:60ch;margin:0 auto;}
+
+/* ---------------- replay grid ---------------- */
+.glr-grid{
+  display:grid;
+  grid-template-columns:1fr;            /* mobile: 1 column */
+  gap:clamp(1.25rem,3vw,1.75rem);
+}
+@media(min-width:600px){ .glr-grid{grid-template-columns:repeat(2,1fr);} }   /* tablet: 2 */
+@media(min-width:960px){ .glr-grid{grid-template-columns:repeat(3,1fr);} }   /* desktop: 3 */
+
+.glr-card{
+  display:flex;flex-direction:column;
+  background:var(--glr-card);
+  border:1px solid var(--glr-line);
+  border-radius:var(--glr-radius);
+  overflow:hidden;
+  box-shadow:0 1px 2px rgba(20,20,20,.04);
+  transition:transform .3s var(--glr-ease),box-shadow .3s var(--glr-ease);
+}
+.glr-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(22,82,79,.45);}
+
+/* thumbnail — REPLACE the teal placeholder with a real image (see note) */
+.glr-thumb{
+  position:relative;
+  aspect-ratio:16/9;
+  background:linear-gradient(135deg,var(--glr-teal),var(--glr-teal-dark));
+  background-size:cover;background-position:center;
+  display:grid;place-items:center;
+}
+.glr-thumb::after{ /* subtle darkening so a play button reads on any image */
+  content:"";position:absolute;inset:0;background:rgba(15,59,57,.28);
+}
+.glr-play{
+  position:relative;z-index:1;
+  width:64px;height:64px;border-radius:50%;
+  background:var(--glr-gold);
+  display:grid;place-items:center;
+  box-shadow:0 8px 22px -6px rgba(0,0,0,.45);
+  transition:transform .3s var(--glr-ease);
+}
+.glr-card:hover .glr-play{transform:scale(1.08);}
+.glr-play svg{width:26px;height:26px;margin-left:3px;fill:var(--glr-teal);}
+
+.glr-body{display:flex;flex-direction:column;gap:.7rem;padding:1.4rem 1.4rem 1.5rem;flex:1;}
+.glr-tag{
+  align-self:flex-start;
+  font-weight:500;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--glr-teal);
+  background:rgba(212,175,55,.16);
+  border:1px solid rgba(212,175,55,.5);
+  padding:.28rem .72rem;border-radius:50px;
+}
+.glr-title{font-weight:700;font-size:1.16rem;line-height:1.3;color:var(--glr-ink);}
+.glr-date{display:inline-flex;align-items:center;gap:.4rem;font-weight:500;font-size:.82rem;color:var(--glr-muted);}
+.glr-date svg{width:14px;height:14px;stroke:var(--glr-gold);fill:none;stroke-width:1.8;}
+.glr-desc{color:var(--glr-muted);font-size:.94rem;}
+.glr-watch{
+  margin-top:auto;                       /* pins button to card bottom */
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  align-self:flex-start;
+  font-weight:500;font-size:.92rem;
+  color:var(--glr-cream);
+  background:var(--glr-teal);
+  padding:.72rem 1.25rem;border-radius:50px;
+  transition:background .25s var(--glr-ease),color .25s var(--glr-ease),transform .25s var(--glr-ease);
+}
+.glr-watch svg{width:15px;height:15px;fill:currentColor;}
+.glr-watch:hover{background:var(--glr-gold);color:var(--glr-ink);transform:translateY(-1px);}
+
+/* ---------------- email capture strip ---------------- */
+.glr-cta{
+  margin-top:clamp(2.25rem,5vw,3.5rem);
+  background:var(--glr-teal);
+  border-radius:var(--glr-radius);
+  padding:clamp(1.75rem,4vw,2.75rem);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:1.5rem;
+}
+.glr-cta-copy{max-width:34ch;}
+.glr-cta-title{font-weight:700;font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--glr-cream);line-height:1.25;}
+.glr-cta-sub{color:rgba(245,240,230,.8);font-size:.92rem;margin-top:.35rem;}
+.glr-form{display:flex;flex-wrap:wrap;gap:.6rem;flex:1;min-width:260px;justify-content:flex-end;}
+.glr-input{
+  flex:1;min-width:200px;
+  background:var(--glr-cream);color:var(--glr-ink);
+  border:1px solid transparent;border-radius:50px;
+  padding:.8rem 1.15rem;
+}
+.glr-input::placeholder{color:#8a8f8d;}
+.glr-submit{
+  font-weight:500;color:var(--glr-ink);background:var(--glr-gold);
+  border:0;border-radius:50px;padding:.8rem 1.5rem;cursor:pointer;
+  transition:filter .25s var(--glr-ease),transform .25s var(--glr-ease);
+}
+.glr-submit:hover{filter:brightness(1.06);transform:translateY(-1px);}
+.glr-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+/* ---------------- footer note ---------------- */
+.glr-foot{text-align:center;color:var(--glr-muted);font-size:.82rem;margin-top:clamp(1.75rem,4vw,2.5rem);}
+
+/* ---- theme-proofing: survive aggressive Squarespace global CSS (incl. !important) ---- */
+.glr-replays,.glr-replays h1,.glr-replays h2,.glr-replays h3,
+.glr-replays p,.glr-replays a,.glr-replays span,.glr-replays label,
+.glr-replays button,.glr-replays input{
+  font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif !important;
+}
+.glr-replays a{text-decoration:none !important;}
+.glr-eyebrow{color:var(--glr-gold) !important;}
+.glr-h1{color:var(--glr-teal) !important;}
+.glr-sub,.glr-desc,.glr-date,.glr-foot{color:var(--glr-muted) !important;}
+.glr-tag{color:var(--glr-teal) !important;}
+.glr-title{color:var(--glr-ink) !important;}
+.glr-cta-title{color:var(--glr-cream) !important;}
+.glr-cta-sub{color:rgba(245,240,230,.8) !important;}
+.glr-watch{color:var(--glr-cream) !important;}
+.glr-watch:hover{color:var(--glr-ink) !important;}
+.glr-submit,.glr-input{color:var(--glr-ink) !important;}
+
+@media(prefers-reduced-motion:reduce){
+  .glr-replays *{transition:none !important;}
+}
+</style>
+
+<section class="glr-replays" aria-labelledby="glr-heading">
+  <div class="glr-inner">
+
+    <!-- ============ 1. HEADER ============ -->
+    <header class="glr-head">
+      <p class="glr-eyebrow">Webinar Replays</p>
+      <h1 class="glr-h1" id="glr-heading">AI Is Talking About Your Brand. Here's What We're Learning.</h1>
+      <p class="glr-sub">Recorded sessions on AI visibility, compliance risk, and what regulated brands need to know.</p>
+    </header>
+
+    <!-- ============ 2. REPLAY GRID ============ -->
+    <div class="glr-grid">
+
+      <!-- ---------- CARD 1 ---------- -->
+      <article class="glr-card">
+        <!-- REPLACE THUMBNAIL: to use a real image, add an inline style to the div below, e.g.
+             style="background-image:url('https://YOUR-IMAGE-URL.jpg')"
+             (keep the class; the play button stays on top). -->
+        <div class="glr-thumb">
+          <span class="glr-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="glr-body">
+          <span class="glr-tag">Compliance</span>
+          <h3 class="glr-title">What AI Is Actually Saying About Your Brand</h3>
+          <p class="glr-date">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
+            August 2026
+          </p>
+          <p class="glr-desc">A Compliance Officer's guide to the invisible risk: how AI platforms like ChatGPT and Perplexity describe your brand, and when an inaccuracy becomes a legal question.</p>
+          <!-- Video URL for Card 1 (Zoho webinar replay) -->
+          <a class="glr-watch" href="https://webinar.zoho.com/meeting/videoprv?recordingId=0d1543caa0da3f6643979cd4731caad43f01208697aef1ce8d0cb261541a510f&amp;x-meeting-org=932538629" target="_blank" rel="noopener" aria-label="Watch replay: What AI Is Actually Saying About Your Brand">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Watch Replay
+          </a>
+        </div>
+      </article>
+
+      <!-- ---------- CARD 2 (placeholder — edit later) ---------- -->
+      <article class="glr-card">
+        <!-- REPLACE THUMBNAIL: add style="background-image:url('...')" to the div below -->
+        <div class="glr-thumb">
+          <span class="glr-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="glr-body">
+          <span class="glr-tag">AI Visibility</span>
+          <h3 class="glr-title">Webinar Title Goes Here</h3>
+          <p class="glr-date">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
+            Month 2026
+          </p>
+          <p class="glr-desc">A short one-to-two sentence summary of this replay goes here. Edit this text with the session's description.</p>
+          <!-- REPLACE WITH VIDEO URL (YouTube/Vimeo unlisted link) -->
+          <a class="glr-watch" href="#" target="_blank" rel="noopener" aria-label="Watch replay: Webinar Title Goes Here">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Watch Replay
+          </a>
+        </div>
+      </article>
+
+      <!-- ---------- CARD 3 (placeholder — edit later) ---------- -->
+      <article class="glr-card">
+        <!-- REPLACE THUMBNAIL: add style="background-image:url('...')" to the div below -->
+        <div class="glr-thumb">
+          <span class="glr-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="glr-body">
+          <span class="glr-tag">Accuracy</span>
+          <h3 class="glr-title">Webinar Title Goes Here</h3>
+          <p class="glr-date">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
+            Month 2026
+          </p>
+          <p class="glr-desc">A short one-to-two sentence summary of this replay goes here. Edit this text with the session's description.</p>
+          <!-- REPLACE WITH VIDEO URL (YouTube/Vimeo unlisted link) -->
+          <a class="glr-watch" href="#" target="_blank" rel="noopener" aria-label="Watch replay: Webinar Title Goes Here">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Watch Replay
+          </a>
+        </div>
+      </article>
+
+    </div><!-- /.glr-grid -->
+
+    <!-- ============ 3. EMAIL CAPTURE STRIP ============ -->
+    <!--
+      This form is a VISUAL placeholder only — a Code Block can't process
+      submissions. Before it collects anything, do ONE of these:
+        (a) Replace this whole strip with a Squarespace *Newsletter* block, OR
+        (b) Point the form's action/endpoint at your email tool
+            (Mailchimp / ConvertKit / Squarespace form endpoint).
+      Then set method="post" and the field "name" your provider expects.
+    -->
+    <section class="glr-cta" aria-labelledby="glr-cta-title">
+      <div class="glr-cta-copy">
+        <h2 class="glr-cta-title" id="glr-cta-title">Want the free Compliance Risk Dashboard tool?</h2>
+        <p class="glr-cta-sub">Get it in your inbox, plus new replays as they're posted.</p>
+      </div>
+      <!-- REPLACE WITH FORM ENDPOINT (e.g. Squarespace native form, Mailchimp, ConvertKit) -->
+      <form class="glr-form" action="#" method="post">
+        <label class="glr-visually-hidden" for="glr-email">Email address</label>
+        <input class="glr-input" id="glr-email" type="email" name="email" placeholder="you@company.com" required>
+        <button class="glr-submit" type="submit">Send it to me</button>
+      </form>
+    </section>
+
+    <!-- ============ 4. FOOTER NOTE ============ -->
+    <p class="glr-foot">&copy; Gold Light Digital — Recordings available for a limited time.</p>
+
+  </div><!-- /.glr-inner -->
+</section>
