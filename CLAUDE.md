@@ -40,6 +40,7 @@ python3 -m http.server 8000
 - `assets/` — `favicon.svg`, `hero-skin.png` (hero image), `kara-reagan.png` (bio photo).
 - `build-standalone.py` — regenerates the paste-ready single-file builds. Run after editing any HTML/CSS/JS.
 - `*-standalone.html` — generated, self-contained single-file versions of each page (CSS/JS/favicon inlined) for website builders that only accept a single code block. Do not hand-edit; run `python3 build-standalone.py`.
+- `webinars-standalone.html` — a **standalone** embed for the "webinars" page (hosted on the Go High Level site via a Custom HTML element). It is **independent of the main site**: its own teal/gold/cream palette and Poppins type, all CSS inlined and namespaced under `.glr-` with a theme-proofing layer so it can't collide with the host theme. Hand-maintained (not produced by `build-standalone.py`); has `REPLACE` comments for video URLs, thumbnails, and the email form.
 
 ## Legal pages
 
