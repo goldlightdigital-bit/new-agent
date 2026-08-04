@@ -1,6 +1,7 @@
 <!-- ============================================================
      GOLD LIGHT DIGITAL — WEBINAR REPLAY PAGE
-     Paste this ENTIRE block into a Squarespace Code Block.
+     Paste this ENTIRE block into a Custom HTML / Code element in your page
+     builder — in Go High Level, use the "Custom JS/HTML" element.
 
      • All CSS is inline in the <style> tag below and scoped under
        .glr-replays (every class is prefixed "glr-"), so it will not
@@ -269,12 +270,14 @@
 
     <!-- ============ 3. EMAIL CAPTURE STRIP ============ -->
     <!--
-      This form is a VISUAL placeholder only — a Code Block can't process
-      submissions. Before it collects anything, do ONE of these:
-        (a) Replace this whole strip with a Squarespace *Newsletter* block, OR
+      This form is a VISUAL placeholder only — it can't process submissions
+      on its own. Before it collects anything, do ONE of these:
+        (a) BEST in Go High Level: delete this strip and drop a native GHL
+            *Form* element here, connected to a Workflow that emails the
+            Compliance Risk Dashboard (keeps leads in your CRM), OR
         (b) Point the form's action/endpoint at your email tool
-            (Mailchimp / ConvertKit / Squarespace form endpoint).
-      Then set method="post" and the field "name" your provider expects.
+            (GHL form endpoint, Mailchimp, ConvertKit, etc.) and set the
+            field "name" your provider expects.
     -->
     <section class="glr-cta" aria-labelledby="glr-cta-title">
       <div class="glr-cta-copy">
