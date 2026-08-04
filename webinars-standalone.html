@@ -73,11 +73,11 @@
 /* ---------------- replay grid ---------------- */
 .glr-grid{
   display:grid;
-  grid-template-columns:1fr;            /* mobile: 1 column */
+  /* auto-fit centers a single card and still forms a tidy 2/3-up as you add more */
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),340px));
+  justify-content:center;
   gap:clamp(1.25rem,3vw,1.75rem);
 }
-@media(min-width:600px){ .glr-grid{grid-template-columns:repeat(2,1fr);} }   /* tablet: 2 */
-@media(min-width:960px){ .glr-grid{grid-template-columns:repeat(3,1fr);} }   /* desktop: 3 */
 
 .glr-card{
   display:flex;flex-direction:column;
@@ -231,53 +231,8 @@
         </div>
       </article>
 
-      <!-- ---------- CARD 2 (placeholder — edit later) ---------- -->
-      <article class="glr-card">
-        <!-- REPLACE THUMBNAIL: add style="background-image:url('...')" to the div below -->
-        <div class="glr-thumb">
-          <span class="glr-play" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </span>
-        </div>
-        <div class="glr-body">
-          <span class="glr-tag">AI Visibility</span>
-          <h3 class="glr-title">Webinar Title Goes Here</h3>
-          <p class="glr-date">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
-            Month 2026
-          </p>
-          <p class="glr-desc">A short one-to-two sentence summary of this replay goes here. Edit this text with the session's description.</p>
-          <!-- REPLACE WITH VIDEO URL (YouTube/Vimeo unlisted link) -->
-          <a class="glr-watch" href="#" target="_blank" rel="noopener" aria-label="Watch replay: Webinar Title Goes Here">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            Watch Replay
-          </a>
-        </div>
-      </article>
-
-      <!-- ---------- CARD 3 (placeholder — edit later) ---------- -->
-      <article class="glr-card">
-        <!-- REPLACE THUMBNAIL: add style="background-image:url('...')" to the div below -->
-        <div class="glr-thumb">
-          <span class="glr-play" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </span>
-        </div>
-        <div class="glr-body">
-          <span class="glr-tag">Accuracy</span>
-          <h3 class="glr-title">Webinar Title Goes Here</h3>
-          <p class="glr-date">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
-            Month 2026
-          </p>
-          <p class="glr-desc">A short one-to-two sentence summary of this replay goes here. Edit this text with the session's description.</p>
-          <!-- REPLACE WITH VIDEO URL (YouTube/Vimeo unlisted link) -->
-          <a class="glr-watch" href="#" target="_blank" rel="noopener" aria-label="Watch replay: Webinar Title Goes Here">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            Watch Replay
-          </a>
-        </div>
-      </article>
+      <!-- Add more replay cards later by copying the <article class="glr-card"> ... </article>
+           block above and updating its tag, title, date, description, and video URL. -->
 
     </div><!-- /.glr-grid -->
 
