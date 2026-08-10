@@ -18,6 +18,9 @@ import urllib.parse
 # source page -> standalone output name
 PAGES = {
     "index.html": "gold-light-digital-standalone.html",
+    "services.html": "services-standalone.html",
+    "about.html": "about-standalone.html",
+    "case-study.html": "case-study-standalone.html",
     "privacy.html": "privacy-standalone.html",
     "terms.html": "terms-standalone.html",
     "accessibility.html": "accessibility-standalone.html",

@@ -4,23 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Marketing website for **Gold Light Digital** — an AI Visibility & Trust advisory
-(founder: Kara Reagan) for **medical aesthetics & dermatology** brands, with select
-nutraceutical brands where claims accuracy matters. The site presents the offer
-ladder (free **AI Trust Snapshot** → one-time **AI Visibility & Accuracy Audit** →
-monthly **AI Trust Governance Program**), the Audit methodology and 4 Pillars
-framework, an anonymized case study, an about section, and how to book a call.
+Multi-page marketing website for **Gold Light Digital** — an AI Visibility &
+Compliance advisory (founder: Kara Reagan) for **regulated industries**: HealthTech,
+MedTech, Pharma, Medical Aesthetics & Dermatology, Nutraceuticals, and FinTech. The
+site positions the offer ladder (free **AI Visibility Snapshot** → **AI Visibility
+Audit**, from **$8,500** → monthly **AI Trust Governance Program**), the 4 Pillars
+framework (Accuracy, Authority, Consistency, Credibility Signals), a compliance lens
+(HIPAA / FDA / SEC exposure, four-level flag scale), the anonymized dermal-filler
+case study as the cross-vertical proof point, an About page, and how to book a call.
 
-**Scope guardrails (important):** the copy targets medical aesthetics & dermatology
-only. Do **not** add HealthTech, MedTech, Pharma, or FinTech references, or any
-PHI/HIPAA framing. Compliance language stays at "claims-accuracy risk" and "what to
-flag for legal counsel" — never a legal determination. Do not publish exact
-Governance/Audit dollar figures without Kara's sign-off (tiers currently show no
-numbers). The marketing voice is first-person **plural ("we")** everywhere except
-the **About/bio**, which stays first-person singular (Kara).
+**Positioning guardrails (important):** the site leads with the **regulated-industries
+compliance** angle across all six verticals — HIPAA / FDA / SEC framing is in scope.
+Still, the firm **audits and advises; it is not a law firm** — never state a legal
+determination; flag risk and recommend the client's counsel (see the Services page
+"Note on Legal Counsel"). The Audit shows "Starting at $8,500"; the Governance
+Program shows "Monthly retainer" (no fixed figure). Marketing voice is first-person
+**plural ("we")** everywhere except the **About/bio**, which stays first-person
+singular (Kara). *(This reverses the earlier aesthetics-only / no-HIPAA / hidden-
+pricing guardrails at Kara's explicit direction — see the Aug 2026 copy rewrite.)*
 
 It is a **static, dependency-free website** — plain HTML, CSS, and vanilla JS. No
-build step, no framework, no package manager.
+build step, no framework, no package manager. Pages are deployed individually into
+Go High Level via Custom HTML (paste the matching `*-standalone.html`).
 
 ## Setup & running
 
@@ -33,8 +38,10 @@ python3 -m http.server 8000
 
 ## Structure
 
-- `index.html` — single-page site (hero, problem, services/offer-ladder, how-it-works, 4 Pillars, results/case-study, about, contact, footer). Section ids: `#services`, `#how`, `#pillars`, `#results`, `#about`, `#contact`.
-- `privacy.html` / `terms.html` / `accessibility.html` — Privacy Policy, Terms & Conditions, and Accessibility Statement pages (linked from the footer; their nav/footer mirror the homepage anchors).
+- `index.html` — **Home** (hero, stat callout row, "Why This Matters Now", services teaser, "Who We Serve" six-vertical grid `#industries`, case-study teaser `#results`, closing CTA `#contact`).
+- `services.html` — **Services** (three tiers in full detail + "A Note on Legal Counsel"). `about.html` — **About** (Kara's bio + how-I-work). `case-study.html` — **Case Study** (dermal-filler audit, the numbers, what-we-found / what-changed).
+- `privacy.html` / `terms.html` / `accessibility.html` — Privacy Policy, Terms & Conditions, and Accessibility Statement pages.
+- All pages share one header/footer; cross-page nav links use absolute production URLs (`https://goldlightdigitalmarketing.com/{home,services,case-study,about,privacy,terms,accessibility}`), and the Home page uses `#industries` / `#contact` anchors for its own sections.
 - `css/styles.css` — all styles; design tokens live in `:root` at the top. v2 consulting-rebuild components are in a clearly-marked section near the end.
 - `js/main.js` — sticky header, mobile nav toggle, scroll-reveal, and cookie-consent banner (all progressive enhancement). The banner stores the visitor's choice under the `gld-cookie-consent` localStorage key (`accepted`/`declined`); any analytics added later should gate on that value.
 - `assets/` — `favicon.svg`, `hero-skin.png` (hero image), `kara-reagan.png` (bio photo).

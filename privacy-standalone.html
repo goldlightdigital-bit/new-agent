@@ -1135,6 +1135,42 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   .about-photo { float: none; width: 100%; max-width: 280px; margin: 0 0 1.5rem; }
 }
 
+/* ============================================================
+   Regulated-industries relaunch (multi-page: home/services/about/case-study)
+   ============================================================ */
+.hero-lead{max-width:880px;margin:0 auto;text-align:center;}
+.hero-lead .hero-sub{margin-left:auto;margin-right:auto;}
+.hero-lead .hero-actions{justify-content:center;}
+
+.stat-caption{text-align:center;color:var(--faint);font-size:.85rem;margin-top:1.6rem;max-width:60ch;margin-inline:auto;}
+
+.prose{max-width:70ch;}
+.prose p{color:var(--muted);margin-bottom:1.15rem;}
+.prose p:last-child{margin-bottom:0;}
+.prose strong{color:var(--white);}
+
+.why{background:var(--warm);}
+
+/* service tiers (services page) */
+.tiers{background:var(--base);}
+.tier{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+  padding:clamp(1.8rem,4vw,2.75rem);margin-bottom:1.5rem;
+}
+.tier.featured{border-color:var(--gold-line);box-shadow:0 20px 60px -30px rgba(232,193,92,.4);background:linear-gradient(165deg,#1e2130,#191b13);}
+.tier:last-child{margin-bottom:0;}
+.tier-head{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem;margin-bottom:.6rem;}
+.tier-head h2{font-size:clamp(1.5rem,3vw,2rem);}
+.tier .price-line{margin:.2rem 0 1rem;}
+.tier h3{font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--white);margin:1.5rem 0 .6rem;letter-spacing:.01em;}
+.tier-what{color:var(--muted);margin-bottom:.4rem;}
+.tier-what strong,.tier-who strong{color:var(--white);}
+.tier-who{color:var(--muted);margin-top:1.3rem;}
+.pillar-list{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.1rem;}
+.pillar-list li{color:var(--muted);}
+.pillar-list strong{color:var(--gold);}
+.tier .btn{margin-top:1.7rem;}
+
   </style>
 </head>
 <body>
@@ -1153,10 +1189,10 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="https://goldlightdigitalmarketing.com/home#services">Services</a></li>
-          <li><a href="https://goldlightdigitalmarketing.com/home#how">How It Works</a></li>
-          <li><a href="https://goldlightdigitalmarketing.com/home#results">Results</a></li>
-          <li><a href="https://goldlightdigitalmarketing.com/home#about">About</a></li>
+          <li><a href="https://goldlightdigitalmarketing.com/services">Services</a></li>
+          <li><a href="https://goldlightdigitalmarketing.com/home#industries">Who We Serve</a></li>
+          <li><a href="https://goldlightdigitalmarketing.com/case-study">Case Study</a></li>
+          <li><a href="https://goldlightdigitalmarketing.com/about">About</a></li>
           <li><a class="nav-cta" href="https://calendly.com/goldlightdigital/30min" target="_blank" rel="noopener">Book a Call</a></li>
         </ul>
       </nav>
@@ -1326,18 +1362,18 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
       <div class="footer-brand">
         <span class="brand-dot" aria-hidden="true"></span>
         <span class="brand-name">Gold Light Digital</span>
-        <p>AI Visibility &amp; Trust for medical aesthetics &amp; dermatology brands.</p>
+        <p>AI visibility &amp; trust for regulated industries.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="https://goldlightdigitalmarketing.com/home#services">Services</a>
-        <a href="https://goldlightdigitalmarketing.com/home#how">How It Works</a>
-        <a href="https://goldlightdigitalmarketing.com/home#results">Results</a>
-        <a href="https://goldlightdigitalmarketing.com/home#about">About</a>
+        <a href="https://goldlightdigitalmarketing.com/services">Services</a>
+        <a href="https://goldlightdigitalmarketing.com/home#industries">Who We Serve</a>
+        <a href="https://goldlightdigitalmarketing.com/case-study">Case Study</a>
+        <a href="https://goldlightdigitalmarketing.com/about">About</a>
         <a href="https://goldlightdigitalmarketing.com/home#contact">Contact</a>
       </nav>
       <div class="footer-meta">
         <a href="mailto:goldlightdigital@gmail.com">goldlightdigital@gmail.com</a>
-        <p class="footer-tag">AI Visibility · Accuracy Audits · Claims-Accuracy Flags</p>
+        <p class="footer-tag">AI Visibility · Accuracy Audits · Compliance Flags</p>
       </div>
     </div>
     <div class="container footer-bottom">
