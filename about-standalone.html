@@ -1186,6 +1186,29 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
 .faq-item summary:hover{color:var(--gold);}
 .faq-a{color:var(--muted);padding:0 0 1.6rem;max-width:72ch;}
 
+/* ---------- Narrative Management package (speakers landing page) ---------- */
+.narrative-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:1.5rem;
+  align-items:start;
+}
+.phase{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid var(--border);}
+.phase-label{
+  font-family:var(--sans);font-weight:700;font-size:.95rem;
+  color:var(--white);margin-bottom:.9rem;
+}
+.phase-when{
+  display:inline-block;margin-left:.5rem;
+  font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;
+  color:var(--gold);background:var(--gold-soft);
+  padding:.18rem .55rem;border-radius:50px;vertical-align:middle;
+}
+.narrative-grid .service-card .service-link{margin-top:1.7rem;display:inline-block;}
+@media (max-width:760px){
+  .narrative-grid{grid-template-columns:1fr;}
+}
+
   </style>
 </head>
 <body>
