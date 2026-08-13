@@ -1249,6 +1249,22 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   .split-media{grid-template-columns:1fr;gap:2.2rem;}
 }
 
+/* ---------- Section media band (full-width framed image) ---------- */
+.band-figure{
+  position:relative;
+  max-width:1000px;
+  margin:0 auto clamp(2.6rem,5vw,3.75rem);
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--gold-line);
+  box-shadow:0 34px 90px -44px rgba(0,0,0,.85), 0 0 0 1px rgba(232,193,92,.06);
+}
+.band-figure img{display:block;width:100%;height:auto;}
+.band-figure::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 66%,rgba(18,21,29,.30) 100%);
+}
+
   </style>
 </head>
 <body>
