@@ -21,6 +21,7 @@ PAGES = {
     "services.html": "services-standalone.html",
     "about.html": "about-standalone.html",
     "case-study.html": "case-study-standalone.html",
+    "speakers.html": "speakers-standalone.html",
     "privacy.html": "privacy-standalone.html",
     "terms.html": "terms-standalone.html",
     "accessibility.html": "accessibility-standalone.html",

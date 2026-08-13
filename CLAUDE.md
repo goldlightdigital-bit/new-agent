@@ -40,6 +40,7 @@ python3 -m http.server 8000
 
 - `index.html` — **Home** (hero, stat callout row, "Why This Matters Now", services teaser, "Who We Serve" six-vertical grid `#industries`, case-study teaser `#results`, closing CTA `#contact`).
 - `services.html` — **Services** (three tiers in full detail + "A Note on Legal Counsel"). `about.html` — **About** (Kara's bio + how-I-work). `case-study.html` — **Case Study** (dermal-filler audit, the numbers, what-we-found / what-changed).
+- `speakers.html` — **audience landing page** for speakers, coaches, creators & influencers ("Be the Name AI Recommends"). Standalone funnel (not in the main nav); first-person voice, native `<details>` FAQ accordion, tiers with no published prices. Default slug `/speakers`.
 - `privacy.html` / `terms.html` / `accessibility.html` — Privacy Policy, Terms & Conditions, and Accessibility Statement pages.
 - All pages share one header/footer; cross-page nav links use absolute production URLs (`https://goldlightdigitalmarketing.com/{home,services,case-study,about,privacy,terms,accessibility}`), and the Home page uses `#industries` / `#contact` anchors for its own sections.
 - `css/styles.css` — all styles; design tokens live in `:root` at the top. v2 consulting-rebuild components are in a clearly-marked section near the end.

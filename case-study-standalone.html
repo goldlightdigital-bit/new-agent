@@ -1166,6 +1166,26 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
 .pillar-list strong{color:var(--gold);}
 .tier .btn{margin-top:1.7rem;}
 
+/* ---------- FAQ accordion (speakers landing page) ---------- */
+.faq-list{max-width:840px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item summary{
+  list-style:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:1.2rem;
+  padding:1.5rem 0;
+  font-family:var(--serif);font-weight:500;font-size:clamp(1.1rem,2.2vw,1.35rem);
+  color:var(--white);transition:color .2s var(--ease);
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+  content:"";width:11px;height:11px;flex-shrink:0;margin-top:.3rem;
+  border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);
+  transform:rotate(45deg);transition:transform .3s var(--ease);
+}
+.faq-item[open] summary::after{transform:rotate(-135deg);}
+.faq-item summary:hover{color:var(--gold);}
+.faq-a{color:var(--muted);padding:0 0 1.6rem;max-width:72ch;}
+
   </style>
 </head>
 <body>
