@@ -1209,6 +1209,22 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   .narrative-grid{grid-template-columns:1fr;}
 }
 
+/* ---------- Hero photo banner (speakers landing page) ---------- */
+.hero-figure{
+  position:relative;
+  max-width:1000px;
+  margin:clamp(2.6rem,5vw,4rem) auto 0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--gold-line);
+  box-shadow:0 34px 90px -44px rgba(0,0,0,.85), 0 0 0 1px rgba(232,193,92,.06);
+}
+.hero-figure img{display:block;width:100%;height:auto;}
+.hero-figure::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 62%,rgba(18,21,29,.35) 100%);
+}
+
   </style>
 </head>
 <body>
