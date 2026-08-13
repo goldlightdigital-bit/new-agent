@@ -8,7 +8,7 @@ Multi-page marketing website for **Gold Light Digital** — an AI Visibility &
 Compliance advisory (founder: Kara Reagan) for **regulated industries**: HealthTech,
 MedTech, Pharma, Medical Aesthetics & Dermatology, Nutraceuticals, and FinTech. The
 site positions the offer ladder (free **AI Visibility Snapshot** → **AI Visibility
-Audit**, from **$8,500** → monthly **AI Trust Governance Program**), the 4 Pillars
+Audit** → monthly **AI Trust Governance Program**), the 4 Pillars
 framework (Accuracy, Authority, Consistency, Credibility Signals), a compliance lens
 (HIPAA / FDA / SEC exposure, four-level flag scale), the anonymized dermal-filler
 case study as the cross-vertical proof point, an About page, and how to book a call.
@@ -17,8 +17,8 @@ case study as the cross-vertical proof point, an About page, and how to book a c
 compliance** angle across all six verticals — HIPAA / FDA / SEC framing is in scope.
 Still, the firm **audits and advises; it is not a law firm** — never state a legal
 determination; flag risk and recommend the client's counsel (see the Services page
-"Note on Legal Counsel"). The Audit shows "Starting at $8,500"; the Governance
-Program shows "Monthly retainer" (no fixed figure). Marketing voice is first-person
+"Note on Legal Counsel"). The Audit is shown **without a published price**; the
+Governance Program shows "Monthly retainer" (no fixed figure). Marketing voice is first-person
 **plural ("we")** everywhere except the **About/bio**, which stays first-person
 singular (Kara). *(This reverses the earlier aesthetics-only / no-HIPAA / hidden-
 pricing guardrails at Kara's explicit direction — see the Aug 2026 copy rewrite.)*
@@ -38,7 +38,7 @@ python3 -m http.server 8000
 
 ## Structure
 
-- `index.html` — **Home** (hero "What Is AI Saying About Your Company?", stat callout row, "The Problem", "The Solution" See-it/Fix-it/Monitor-it steps, services "How We Work Together" `#services`, "Why This Is Different", "Methodology" 4-pillar grid, "Who We Serve" six-vertical grid `#industries`, case-study teaser `#results`, FAQ, closing CTA `#contact`). Carries FAQPage + ProfessionalService JSON-LD. The Audit is shown **without a price** on Home (services.html still lists "Starting at $8,500").
+- `index.html` — **Home** (hero "What Is AI Saying About Your Company?", "The Problem", "The Solution" See-it/Fix-it/Monitor-it steps, services "How We Work Together" `#services`, "Why This Is Different", "Methodology" 4-pillar grid, "Who We Serve" six-vertical grid `#industries`, case-study teaser `#results`, FAQ, closing CTA `#contact`). Carries FAQPage + ProfessionalService JSON-LD. The Audit is shown **without a price** everywhere now (the old "Starting at $8,500" was removed from Home and services.html).
 - `services.html` — **Services** (three tiers in full detail + "A Note on Legal Counsel"). `about.html` — **About** (Kara's bio + how-I-work). `case-study.html` — **Case Study** (dermal-filler audit, the numbers, what-we-found / what-changed).
 - `speakers.html` — **audience landing page** for paid speakers, established experts & influencers ("Be the Name AI Recommends"). Standalone funnel (not in the main nav); first-person voice, native `<details>` FAQ accordion, photo bands (hero/problem/pricing), and FAQPage + ProfessionalService JSON-LD. The Narrative Management Package shows its two phases (Audit, one-time; Ongoing Management, monthly) **without dollar figures** — pricing is handled on a call, consistent with the hidden-pricing pattern elsewhere. Default slug `/speakers`.
 - `privacy.html` / `terms.html` / `accessibility.html` — Privacy Policy, Terms & Conditions, and Accessibility Statement pages.
