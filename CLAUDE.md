@@ -38,7 +38,7 @@ python3 -m http.server 8000
 
 ## Structure
 
-- `index.html` — **Home** (hero, stat callout row, "Why This Matters Now", services teaser, "Who We Serve" six-vertical grid `#industries`, case-study teaser `#results`, closing CTA `#contact`).
+- `index.html` — **Home** (hero "What Is AI Saying About Your Company?", stat callout row, "The Problem", "The Solution" See-it/Fix-it/Monitor-it steps, services "How We Work Together" `#services`, "Why This Is Different", "Methodology" 4-pillar grid, "Who We Serve" six-vertical grid `#industries`, case-study teaser `#results`, FAQ, closing CTA `#contact`). Carries FAQPage + ProfessionalService JSON-LD. The Audit is shown **without a price** on Home (services.html still lists "Starting at $8,500").
 - `services.html` — **Services** (three tiers in full detail + "A Note on Legal Counsel"). `about.html` — **About** (Kara's bio + how-I-work). `case-study.html` — **Case Study** (dermal-filler audit, the numbers, what-we-found / what-changed).
 - `speakers.html` — **audience landing page** for paid speakers, established experts & influencers ("Be the Name AI Recommends"). Standalone funnel (not in the main nav); first-person voice, native `<details>` FAQ accordion, photo bands (hero/problem/pricing), and FAQPage + ProfessionalService JSON-LD. The Narrative Management Package shows its two phases (Audit, one-time; Ongoing Management, monthly) **without dollar figures** — pricing is handled on a call, consistent with the hidden-pricing pattern elsewhere. Default slug `/speakers`.
 - `privacy.html` / `terms.html` / `accessibility.html` — Privacy Policy, Terms & Conditions, and Accessibility Statement pages.

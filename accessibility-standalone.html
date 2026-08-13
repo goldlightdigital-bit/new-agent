@@ -1278,6 +1278,31 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
 }
 .phase-close + .service-link{margin-top:1.4rem;}
 
+/* ---------- Home v2 new sections (Solution / Stance / Methodology / FAQ) ---------- */
+.solution{background:var(--base);}
+.stance{background:var(--base);}
+.methodology{background:var(--warm);}
+.faq-home{background:var(--warm);}
+.faq-home .faq-list{margin-left:auto;margin-right:auto;}
+
+/* Methodology pillars */
+.pillar-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.3rem;
+  margin-bottom:2rem;
+}
+.pillar-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.7rem 1.6rem;
+  transition:transform .35s var(--ease), border-color .35s var(--ease);
+}
+.pillar-card:hover{transform:translateY(-4px);border-color:var(--gold-line);}
+.pillar-card h3{font-size:1.2rem;margin-bottom:.5rem;color:var(--gold);}
+.pillar-card p{color:var(--muted);font-size:.95rem;}
+
   </style>
 </head>
 <body>
