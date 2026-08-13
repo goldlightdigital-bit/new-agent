@@ -1225,6 +1225,30 @@ section { padding-block: clamp(4rem, 9vw, 7rem); }
   background:linear-gradient(180deg,transparent 62%,rgba(18,21,29,.35) 100%);
 }
 
+/* ---------- Split media row (copy beside image) ---------- */
+.split-media{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(2rem,5vw,4.5rem);
+  align-items:center;
+}
+.split-media .section-head{margin-bottom:1.6rem;}
+.split-figure{
+  position:relative;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--gold-line);
+  box-shadow:0 34px 90px -44px rgba(0,0,0,.85), 0 0 0 1px rgba(232,193,92,.06);
+}
+.split-figure img{display:block;width:100%;height:auto;}
+.split-figure::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 68%,rgba(18,21,29,.30) 100%);
+}
+@media (max-width:820px){
+  .split-media{grid-template-columns:1fr;gap:2.2rem;}
+}
+
   </style>
 </head>
 <body>
