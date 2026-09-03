@@ -49,6 +49,7 @@ python3 -m http.server 8000
 - `build-standalone.py` — regenerates the paste-ready single-file builds. Run after editing any HTML/CSS/JS.
 - `*-standalone.html` — generated, self-contained single-file versions of each page (CSS/JS/favicon inlined) for website builders that only accept a single code block. Do not hand-edit; run `python3 build-standalone.py`.
 - `webinars-standalone.html` — a **standalone** embed for the "webinars" page (hosted on the Go High Level site via a Custom HTML element). It is **independent of the main site**: its own teal/gold/cream palette and Poppins type, all CSS inlined and namespaced under `.glr-` with a theme-proofing layer so it can't collide with the host theme. Hand-maintained (not produced by `build-standalone.py`); has `REPLACE` comments for video URLs, thumbnails, and the email form.
+- `cited-by-ai-standalone.html` — a **standalone** conversion landing page for Kara's book *Cited by AI* (single goal: drive to the Amazon buy link `https://www.amazon.com/dp/B0HHBDJM9P`; no site nav, no forms). **Independent of the main site**: the book's own palette (navy `#0E1A2E`/`#14243E`, gold `#C4A25A`/`#D6B87A`) and type (Playfair Display + Outfit, embedded as base64 woff2). Fully self-contained — the book cover is recreated as an inline `<symbol id="book">` SVG (a `BOOK COVER` comment marks how to swap in the real cover image), and Kara's headshot is an embedded webp. Hand-maintained (not produced by `build-standalone.py`).
 
 ## Legal pages
 
